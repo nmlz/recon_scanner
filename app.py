@@ -104,7 +104,7 @@ def sub_and_naabu_merge(subdomain_list, naabu_output, output_file="httpx_targets
 # Httpx has a TON of functionalities, like screenshot, saving hash, and more, this is a basic scan that should serve its purpose during the first scans without adding a lot of overhead
 def httpx(httpx_input_file):
     httpx_output = "httpx_output.txt"
-    httpx_command = ["httpx", "-l", httpx_input_file, "-status-code", "-tech-detect", "-title", "-t", "100", "-follow-redirects", "-location", "-timeout", "5", "-maxr", "2", "-csv", "-o", httpx_output]
+    httpx_command = ["httpx", "-l", httpx_input_file, "-status-code", "-tech-detect", "-title", "-t", "100", "-follow-redirects", "-location", "-timeout", "5", "-maxr", "2", "-j", "-o", httpx_output]
     subprocess.run(httpx_command, check=True)
     return(httpx_output)
 
